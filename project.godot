@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Pie_Hunters"
+run/main_scene="uid://cpdhlj4v2dnhr"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
 [physics]

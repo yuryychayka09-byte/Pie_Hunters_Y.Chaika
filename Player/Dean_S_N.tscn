@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cha1unj8cwo7f"]
+
+[ext_resource type="Texture2D" uid="uid://bik40cy58o546" path="res://Assets/Copilot_20260224_165251(1).png" id="1_vvn56"]
+[ext_resource type="Script" uid="uid://dklr6wpxt2ql7" path="res://Skripts/dean.gd" id="2_k1ikf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wtmng"]
+height = 62.0
+
+[node name="Node2D" type="RigidBody2D" unique_id=612567022]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=559861779]
+position = Vector2(6, 43)
+shape = SubResource("CapsuleShape2D_wtmng")
+
+[node name="Dean" type="Sprite2D" parent="CollisionShape2D" unique_id=1303293348]
+position = Vector2(0.9999981, 0)
+scale = Vector2(0.040771488, 0.044190455)
+texture = ExtResource("1_vvn56")
+script = ExtResource("2_k1ikf")
+
+[node name="Camera2D" type="Camera2D" parent="CollisionShape2D/Dean" unique_id=739268505]
+position = Vector2(73.58075, -475.2162)
+scale = Vector2(24.526943, 22.62932)
+zoom = Vector2(2.5, 2.5)
