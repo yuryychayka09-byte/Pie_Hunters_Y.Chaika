@@ -1,24 +1,90 @@
 [gd_scene format=3 uid="uid://cha1unj8cwo7f"]
 
-[ext_resource type="Texture2D" uid="uid://bik40cy58o546" path="res://Assets/Copilot_20260224_165251(1).png" id="1_vvn56"]
-[ext_resource type="Script" uid="uid://dklr6wpxt2ql7" path="res://Skripts/dean.gd" id="2_k1ikf"]
+[ext_resource type="Texture2D" uid="uid://b14tn4u7k880a" path="res://Assets/Знімок екрана 2026-03-04 233010.png" id="1_y4t1h"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wtmng"]
-height = 62.0
+radius = 14.0
+height = 108.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spv4f"]
+atlas = ExtResource("1_y4t1h")
+region = Rect2(0, 0, 190, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awrp4"]
+atlas = ExtResource("1_y4t1h")
+region = Rect2(190, 0, 190, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdvu3"]
+atlas = ExtResource("1_y4t1h")
+region = Rect2(380, 0, 190, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nenh"]
+atlas = ExtResource("1_y4t1h")
+region = Rect2(0, 190, 190, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5xd0"]
+atlas = ExtResource("1_y4t1h")
+region = Rect2(190, 190, 190, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpxi5"]
+atlas = ExtResource("1_y4t1h")
+region = Rect2(380, 190, 190, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54p2c"]
+atlas = ExtResource("1_y4t1h")
+region = Rect2(0, 380, 190, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svn3y"]
+atlas = ExtResource("1_y4t1h")
+region = Rect2(190, 380, 190, 190)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lqsha"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spv4f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awrp4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdvu3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5nenh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5xd0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpxi5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54p2c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svn3y")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 9.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Node2D" type="RigidBody2D" unique_id=612567022]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=559861779]
-position = Vector2(6, 43)
+position = Vector2(-114, 23)
 shape = SubResource("CapsuleShape2D_wtmng")
 
-[node name="Dean" type="Sprite2D" parent="CollisionShape2D" unique_id=1303293348]
-position = Vector2(0.9999981, 0)
-scale = Vector2(0.040771488, 0.044190455)
-texture = ExtResource("1_vvn56")
-script = ExtResource("2_k1ikf")
-
-[node name="Camera2D" type="Camera2D" parent="CollisionShape2D/Dean" unique_id=739268505]
-position = Vector2(73.58075, -475.2162)
-scale = Vector2(24.526943, 22.62932)
-zoom = Vector2(2.5, 2.5)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D" unique_id=1975573519]
+position = Vector2(0, -13)
+sprite_frames = SubResource("SpriteFrames_lqsha")
+animation = &"Walk"
+autoplay = "Walk"
+frame = 2
+frame_progress = 0.574136
