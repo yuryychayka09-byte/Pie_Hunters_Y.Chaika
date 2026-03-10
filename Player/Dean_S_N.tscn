@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cha1unj8cwo7f"]
 
+[ext_resource type="Script" uid="uid://eq5mjp14hqus" path="res://Player/dean_s_n.gd" id="1_spv4f"]
 [ext_resource type="Texture2D" uid="uid://b14tn4u7k880a" path="res://Assets/Знімок екрана 2026-03-04 233010.png" id="1_y4t1h"]
+[ext_resource type="Texture2D" uid="uid://c270olb4uffeu" path="res://Assets/Sprite2D.png" id="3_awrp4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wtmng"]
 radius = 14.0
@@ -75,16 +77,29 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Node2D" type="RigidBody2D" unique_id=612567022]
+[node name="Node2D" type="CharacterBody2D" unique_id=259409677]
+script = ExtResource("1_spv4f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=559861779]
 position = Vector2(-114, 23)
 shape = SubResource("CapsuleShape2D_wtmng")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D" unique_id=1975573519]
-position = Vector2(0, -13)
+visible = false
+position = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_lqsha")
 animation = &"Walk"
 autoplay = "Walk"
 frame = 2
 frame_progress = 0.574136
+
+[node name="ЗнімокЕкрана202603042330108_png" type="Sprite2D" parent="CollisionShape2D" unique_id=1262117720]
+visibility_layer = 6
+position = Vector2(-11, -13)
+texture = ExtResource("3_awrp4")
+script = ExtResource("1_spv4f")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1240237134]
+position = Vector2(-113, 29)
+offset = Vector2(1, 0)
+zoom = Vector2(1.5, 1.5)

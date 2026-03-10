@@ -1,21 +1,21 @@
-[gd_scene format=4 uid="uid://cpdhlj4v2dnhr"]
+[gd_scene format=4 uid="uid://bc3vc7rrf5eax"]
 
-[ext_resource type="Texture2D" uid="uid://cb4f035tsk6fy" path="res://Assets/free-swamp-game-tileset-pixel-art/2 Background/Layers/1.png" id="1_wkp8b"]
-[ext_resource type="Texture2D" uid="uid://dssprncst6f34" path="res://Assets/image-removebg-preview(1).png" id="2_20pc6"]
-[ext_resource type="Texture2D" uid="uid://dltkjyftw7kqi" path="res://Assets/TileSet Apocalypse Base.png" id="4_c6i3y"]
-[ext_resource type="Texture2D" uid="uid://dhlxmv104kv6p" path="res://Assets/textures_02_08_25 (1).png" id="5_c2ibq"]
-[ext_resource type="Texture2D" uid="uid://cx4dwe58fjl6" path="res://Assets/PixelTreeSet/Trees.png" id="6_j4qnp"]
-[ext_resource type="Texture2D" uid="uid://c1u5xwuav562j" path="res://Assets/free-swamp-game-tileset-pixel-art/1 Tiles/Tileset.png" id="7_fpfj3"]
-[ext_resource type="Texture2D" uid="uid://1m8814gcgrue" path="res://Assets/free-swamp-game-tileset-pixel-art/3 Objects/Ridges/4.png" id="8_sc1dx"]
-[ext_resource type="Texture2D" uid="uid://cp1ep60sofvdh" path="res://Assets/free-swamp-game-tileset-pixel-art/3 Objects/Stones/5.png" id="9_kjvhd"]
-[ext_resource type="Texture2D" uid="uid://bc2w15qkevdm3" path="res://Assets/free-swamp-game-tileset-pixel-art/3 Objects/Boxes/4.png" id="10_5tuhn"]
-[ext_resource type="PackedScene" uid="uid://ykelmnknjcjr" path="res://Skripts/character_body_2d dean.tscn" id="10_wkp8b"]
+[ext_resource type="Texture2D" uid="uid://cb4f035tsk6fy" path="res://Assets/free-swamp-game-tileset-pixel-art/2 Background/Layers/1.png" id="1_hy7n7"]
+[ext_resource type="Texture2D" uid="uid://dssprncst6f34" path="res://Assets/image-removebg-preview(1).png" id="2_8m8bb"]
+[ext_resource type="Texture2D" uid="uid://dltkjyftw7kqi" path="res://Assets/TileSet Apocalypse Base.png" id="3_w02xm"]
+[ext_resource type="Texture2D" uid="uid://dhlxmv104kv6p" path="res://Assets/textures_02_08_25 (1).png" id="4_7dehd"]
+[ext_resource type="Texture2D" uid="uid://cx4dwe58fjl6" path="res://Assets/PixelTreeSet/Trees.png" id="5_ollkd"]
+[ext_resource type="Texture2D" uid="uid://c1u5xwuav562j" path="res://Assets/free-swamp-game-tileset-pixel-art/1 Tiles/Tileset.png" id="6_a45l2"]
+[ext_resource type="Texture2D" uid="uid://1m8814gcgrue" path="res://Assets/free-swamp-game-tileset-pixel-art/3 Objects/Ridges/4.png" id="7_l4m6f"]
+[ext_resource type="Texture2D" uid="uid://cp1ep60sofvdh" path="res://Assets/free-swamp-game-tileset-pixel-art/3 Objects/Stones/5.png" id="8_j4x27"]
+[ext_resource type="Texture2D" uid="uid://bc2w15qkevdm3" path="res://Assets/free-swamp-game-tileset-pixel-art/3 Objects/Boxes/4.png" id="9_5ei6d"]
+[ext_resource type="PackedScene" uid="uid://ykelmnknjcjr" path="res://Skripts/character_body_2d dean.tscn" id="10_tmmsq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2gh4u"]
 size = Vector2(222, 66.5)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3b0ty"]
-texture = ExtResource("4_c6i3y")
+texture = ExtResource("3_w02xm")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 1:0/0 = 0
@@ -343,7 +343,7 @@ texture = ExtResource("4_c6i3y")
 8:10/0/terrain_set = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bg4s2"]
-texture = ExtResource("5_c2ibq")
+texture = ExtResource("4_7dehd")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, -8, 8, -8, 8, 8, 8, 8, -8, 8, -8, 8, -8, -8)
 1:0/0 = 0
@@ -1011,7 +1011,7 @@ texture = ExtResource("5_c2ibq")
 8:25/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hhcpw"]
-texture = ExtResource("6_j4qnp")
+texture = ExtResource("5_ollkd")
 19:0/0 = 0
 20:0/0 = 0
 7:1/0 = 0
@@ -1192,7 +1192,7 @@ texture = ExtResource("6_j4qnp")
 8:13/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mxvw5"]
-texture = ExtResource("7_fpfj3")
+texture = ExtResource("6_a45l2")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 2
@@ -1785,7 +1785,7 @@ texture = ExtResource("7_fpfj3")
 19:11/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xrxkg"]
-texture = ExtResource("8_sc1dx")
+texture = ExtResource("7_l4m6f")
 texture_region_size = Vector2i(16, 20)
 0:0/0 = 0
 1:0/0 = 0
@@ -1821,7 +1821,7 @@ sources/4 = SubResource("TileSetAtlasSource_xrxkg")
 [node name="1" type="Sprite2D" parent="." unique_id=1155238102]
 position = Vector2(1877.75, 772)
 scale = Vector2(10.34809, 5.623457)
-texture = ExtResource("1_wkp8b")
+texture = ExtResource("1_hy7n7")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1424616138]
 
@@ -1833,7 +1833,7 @@ shape = SubResource("RectangleShape2D_2gh4u")
 texture_filter = 3
 position = Vector2(0, -1.25)
 scale = Vector2(0.34966677, 0.35000002)
-texture = ExtResource("2_20pc6")
+texture = ExtResource("2_8m8bb")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=50234740]
 position = Vector2(26, 10)
@@ -1845,12 +1845,12 @@ physics_quadrant_size = 32
 [node name="5" type="Sprite2D" parent="." unique_id=1036492773]
 position = Vector2(-279, 569)
 scale = Vector2(1.1451613, 1.1451613)
-texture = ExtResource("9_kjvhd")
+texture = ExtResource("8_j4x27")
 
 [node name="4" type="Sprite2D" parent="." unique_id=45374883]
 position = Vector2(42, 556)
 scale = Vector2(1.0151515, 1.0769231)
-texture = ExtResource("10_5tuhn")
+texture = ExtResource("9_5ei6d")
 
-[node name="CharacterBody2D" parent="." unique_id=2130938374 instance=ExtResource("10_wkp8b")]
+[node name="CharacterBody2D" parent="." unique_id=2130938374 instance=ExtResource("10_tmmsq")]
 position = Vector2(355, 383)
