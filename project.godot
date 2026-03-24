@@ -11,8 +11,14 @@ config_version=5
 [application]
 
 config/name="Pie_Hunters"
-run/main_scene="uid://cpdhlj4v2dnhr"
+run/main_scene="uid://c3w6a2u6tejmv"
 config/features=PackedStringArray("4.6", "Forward Plus")
+
+[display]
+
+window/size/initial_position_type=3
+window/stretch/scale=0.5
+window/vsync/vsync_mode=2
 
 [input]
 
