@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cha1unj8cwo7f"]
 
 [ext_resource type="Script" uid="uid://eq5mjp14hqus" path="res://Player/dean_s_n.gd" id="1_spv4f"]
-[ext_resource type="Texture2D" uid="uid://b14tn4u7k880a" path="res://Assets/Знімок екрана 2026-03-04 233010.png" id="1_y4t1h"]
-[ext_resource type="Texture2D" uid="uid://c270olb4uffeu" path="res://Assets/Sprite2D.png" id="3_awrp4"]
+[ext_resource type="Texture2D" uid="uid://b14tn4u7k880a" path="res://Assets/HighWs/Walk sprites.png" id="1_y4t1h"]
+[ext_resource type="Texture2D" uid="uid://c270olb4uffeu" path="res://Assets/HighWs/Sprite2D.png" id="3_awrp4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wtmng"]
 radius = 14.0

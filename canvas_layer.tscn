@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://yot2mljx4wx6"]
+
+[ext_resource type="Script" uid="uid://car4wxrvsw0r4" path="res://canvas_layer.gd" id="1_v2lfg"]
+[ext_resource type="Script" uid="uid://qsjpo6asj1kw" path="res://label.gd" id="2_tg4cr"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=750310962]
+process_mode = 3
+script = ExtResource("1_v2lfg")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1623689100]
+offset_left = -1.0
+offset_right = 581.0
+offset_bottom = 397.0
+color = Color(0.19411732, 0.024466265, 0.15071873, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1334583449]
+offset_left = 89.0
+offset_top = 28.0
+offset_right = 416.0
+offset_bottom = 323.0
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=1281390346]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer" unique_id=679764935]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer" unique_id=571186014]
+layout_mode = 2
+text = "PAUSE GAME MOMENT"
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/VBoxContainer" unique_id=1205939073]
+layout_mode = 2
+
+[node name="Main Manu" type="Button" parent="HBoxContainer/MarginContainer/VBoxContainer" unique_id=826919316]
+layout_mode = 2
+text = "MAIN MENU"
+
+[node name="Quit to desctop" type="Button" parent="HBoxContainer/MarginContainer/VBoxContainer" unique_id=1419237622]
+layout_mode = 2
+text = "QUIT TO DESCTOP"
+
+[node name="Resume to Game" type="Button" parent="HBoxContainer/MarginContainer/VBoxContainer" unique_id=997646798]
+layout_mode = 2
+text = "Resume to game"
+
+[node name="Label" type="Label" parent="." unique_id=249979623]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("2_tg4cr")
+
+[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/Main Manu" to="." method="_on_main_manu_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/Quit to desctop" to="." method="_on_quit_to_desctop_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/Resume to Game" to="." method="_on_resume_to_game_pressed"]

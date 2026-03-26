@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://cpdhlj4v2dnhr"]
 
 [ext_resource type="Texture2D" uid="uid://cb4f035tsk6fy" path="res://Assets/free-swamp-game-tileset-pixel-art/2 Background/Layers/1.png" id="1_wkp8b"]
-[ext_resource type="Texture2D" uid="uid://dssprncst6f34" path="res://Assets/image-removebg-preview(1).png" id="2_20pc6"]
+[ext_resource type="Texture2D" uid="uid://dssprncst6f34" path="res://Assets/HighWs/Impala 67 .png" id="2_20pc6"]
 [ext_resource type="Texture2D" uid="uid://dltkjyftw7kqi" path="res://Assets/TileSet Apocalypse Base.png" id="4_c6i3y"]
 [ext_resource type="Texture2D" uid="uid://dhlxmv104kv6p" path="res://Assets/textures_02_08_25 (1).png" id="5_c2ibq"]
 [ext_resource type="Texture2D" uid="uid://cx4dwe58fjl6" path="res://Assets/PixelTreeSet/Trees.png" id="6_j4qnp"]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ykelmnknjcjr"]
 
 [ext_resource type="Script" uid="uid://c80nucx4wl0i5" path="res://Player/character_body_2d.gd" id="1_083xm"]
-[ext_resource type="Texture2D" uid="uid://b14tn4u7k880a" path="res://Assets/Знімок екрана 2026-03-04 233010.png" id="2_083xm"]
+[ext_resource type="Texture2D" uid="uid://b14tn4u7k880a" path="res://Assets/HighWs/Walk sprites.png" id="2_083xm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3877b"]
 atlas = ExtResource("2_083xm")
@@ -72,6 +72,8 @@ radius = 11.0
 height = 64.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=2130938374]
+collision_layer = 14
+collision_mask = 15
 script = ExtResource("1_083xm")
 
 [node name="PlayerSprite2D" type="AnimatedSprite2D" parent="." unique_id=1212303399]
@@ -81,6 +83,7 @@ sprite_frames = SubResource("SpriteFrames_yu44v")
 animation = &"Walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1975178190]
+light_mask = 6
 visibility_layer = 6
 texture_filter = 4
 texture_repeat = 1
