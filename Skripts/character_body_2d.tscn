@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cxgta745cpwg8"]
 
 [ext_resource type="Script" uid="uid://c80nucx4wl0i5" path="res://Player/character_body_2d.gd" id="1_u3uv2"]
-[ext_resource type="Texture2D" uid="uid://b14tn4u7k880a" path="res://Assets/Знімок екрана 2026-03-04 233010.png" id="2_ctgfx"]
+[ext_resource type="Texture2D" uid="uid://b14tn4u7k880a" path="res://Assets/HighWs/Walk sprites.png" id="2_ctgfx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qirgi"]
 radius = 11.0

@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://c3w6a2u6tejmv"]
+
+[ext_resource type="Script" uid="uid://bsxtudp70253p" path="res://control.gd" id="1_1wux2"]
+[ext_resource type="Texture2D" uid="uid://x7xo2kp4gaul" path="res://Assets/pixelartify.png" id="2_6bf3v"]
+[ext_resource type="Texture2D" uid="uid://cfmufgholxody" path="res://Assets/HighWs/Icon Start game.png" id="3_bq2dg"]
+[ext_resource type="Texture2D" uid="uid://uabjajtuy0j0" path="res://Assets/HighWs/Logotip game.png" id="4_6bf3v"]
+[ext_resource type="Script" uid="uid://4p1yxg8kjdoc" path="res://Skripts/setting.gd" id="4_bq2dg"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wkjep"]
+load_path = "res://.godot/imported/Icon Start game.png-6d62b55bb2e3867890607534c5549b9f.ctex"
+
+[sub_resource type="FontVariation" id="FontVariation_bq2dg"]
+
+[node name="Control" type="Control" unique_id=1239940216]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1003.0
+offset_bottom = 704.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1wux2")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1312569057]
+layout_mode = 0
+offset_left = -186.0
+offset_top = -8.0
+offset_right = 2224.3333
+offset_bottom = 1354.0
+mouse_filter = 2
+texture = ExtResource("2_6bf3v")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1600105900]
+layout_mode = 0
+offset_left = 942.0
+offset_top = 141.0
+offset_right = 1932.0
+offset_bottom = 1052.0
+
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=88418406]
+layout_mode = 2
+focus_mode = 1
+theme_override_font_sizes/font_size = 52
+text = "Start Game"
+icon = SubResource("CompressedTexture2D_wkjep")
+flat = true
+autowrap_mode = 2
+icon_alignment = 1
+
+[node name="Exit" type="Button" parent="VBoxContainer" unique_id=1263572080]
+layout_mode = 2
+theme_override_font_sizes/font_size = 58
+text = "Exit"
+icon = ExtResource("3_bq2dg")
+flat = true
+icon_alignment = 1
+
+[node name="Setting" type="Button" parent="VBoxContainer" unique_id=538734432]
+layout_mode = 2
+theme_override_font_sizes/font_size = 54
+text = "Setting"
+icon = ExtResource("3_bq2dg")
+flat = true
+icon_alignment = 1
+script = ExtResource("4_bq2dg")
+
+[node name="LogotipGame" type="Sprite2D" parent="VBoxContainer" unique_id=68317538]
+position = Vector2(-685, 163)
+scale = Vector2(0.5556391, 0.5556391)
+texture = ExtResource("4_6bf3v")
+
+[node name="Name Game" type="Label" parent="VBoxContainer/LogotipGame" unique_id=972982892]
+anchors_preset = -1
+anchor_right = 2.101
+anchor_bottom = 0.535
+offset_left = 253.76184
+offset_top = -142.17859
+offset_right = -298.7362
+offset_bottom = -275.9536
+theme_override_fonts/font = SubResource("FontVariation_bq2dg")
+theme_override_font_sizes/font_size = 162
+text = "Pie Hunters"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Setting" to="." method="_on_setting_pressed"]

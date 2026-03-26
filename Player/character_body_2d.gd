@@ -24,6 +24,6 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 # Додаємо вихід у меню через Esc
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel"): # стандартно це Esc
-		get_tree().change_scene_to_file("res://Skripts/control 01.tscn")
+#func _input(event: InputEvent) -> void:
+	#if event.is_action_pressed("ui_cancel"): # стандартно це Esc
+	#	get_tree().change_scene_to_file("res://Skripts/MenuG.tscn")
