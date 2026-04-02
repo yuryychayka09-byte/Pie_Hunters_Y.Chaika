@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d0i5p22dppnnj"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=2094335902]
+
+[node name="DialogueLabel" type="Label" parent="." unique_id=33836810]
+offset_left = 437.0
+offset_top = 575.0
+offset_right = 542.0
+offset_bottom = 606.0
+theme_override_font_sizes/font_size = 22
+text = "Думка"

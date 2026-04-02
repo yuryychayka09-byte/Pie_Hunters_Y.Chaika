@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://brxm7d5uqo2kh"]
+
+[ext_resource type="Script" uid="uid://balc7jt7y6ku5" path="res://area_2d.gd" id="1_arfyf"]
+[ext_resource type="Texture2D" uid="uid://dssprncst6f34" path="res://Assets/HighWs/Impala 67 .png" id="2_12xk5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kar5t"]
+size = Vector2(216, 34.5)
+
+[node name="Impala 67" type="Area2D" unique_id=2142207058]
+script = ExtResource("1_arfyf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1116684876]
+position = Vector2(170.88097, 541.64874)
+scale = Vector2(0.8809521, 0.8809522)
+shape = SubResource("RectangleShape2D_kar5t")
+
+[node name="Impala 68" type="Sprite2D" parent="." unique_id=645782044]
+light_mask = 2
+visibility_layer = 2
+texture_filter = 3
+position = Vector2(170.88097, 537.9047)
+scale = Vector2(0.30803972, 0.30833328)
+texture = ExtResource("2_12xk5")

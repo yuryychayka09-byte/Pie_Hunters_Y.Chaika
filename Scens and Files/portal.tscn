@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cqs6w4ilksrqx"]
+
+[ext_resource type="Script" uid="uid://b6hyrs52t2tq1" path="res://Scens and Files/portal.gd" id="1_ot22w"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_margf"]
+radius = 45.0
+height = 110.0
+
+[node name="Portal_F" type="Area2D" unique_id=1526899386]
+script = ExtResource("1_ot22w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=277245445]
+shape = SubResource("CapsuleShape2D_margf")

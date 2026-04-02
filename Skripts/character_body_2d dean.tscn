@@ -2,6 +2,19 @@
 
 [ext_resource type="Script" uid="uid://c80nucx4wl0i5" path="res://Player/character_body_2d.gd" id="1_083xm"]
 [ext_resource type="Texture2D" uid="uid://b14tn4u7k880a" path="res://Assets/HighWs/Walk sprites.png" id="2_083xm"]
+[ext_resource type="Texture2D" uid="uid://xitrbqktu30h" path="res://Assets/HighWs/Idle Dean (1)/sprite_Idle_Dean 200.png" id="2_dxr7j"]
+[ext_resource type="Texture2D" uid="uid://d1xn5ygbs1kkg" path="res://Assets/HighWs/Idle Dean (1)/sprite_Idle_Dean 201.png" id="3_egym8"]
+[ext_resource type="Texture2D" uid="uid://cbndfqps54ym3" path="res://Assets/HighWs/Idle Dean (1)/sprite_Idle_Dean 202.png" id="4_idysr"]
+[ext_resource type="Texture2D" uid="uid://b2tl631oe1ise" path="res://Assets/HighWs/Idle Dean (1)/sprite_Idle_Dean 203.png" id="5_7edby"]
+[ext_resource type="Texture2D" uid="uid://c8mi76a614ncs" path="res://Assets/HighWs/Idle Dean (1)/sprite_Idle_Dean 204.png" id="6_wjagi"]
+[ext_resource type="Texture2D" uid="uid://bebtxwhyuy6yq" path="res://Assets/HighWs/Idle Dean (1)/sprite_Idle_Dean 205.png" id="7_fqpe0"]
+[ext_resource type="Texture2D" uid="uid://c0lvcrjeeqyfi" path="res://Assets/HighWs/Idle Dean (1)/sprite_Idle_Dean 206.png" id="8_wnqi4"]
+[ext_resource type="Texture2D" uid="uid://b6n7g2gjwue3r" path="res://Assets/HighWs/Idle Dean (1)/sprite_Idle_Dean 207.png" id="9_85apb"]
+[ext_resource type="Texture2D" uid="uid://dxsxkayj16ijw" path="res://Assets/HighWs/Idle Dean (1)/sprite_Idle_Dean 208.png" id="10_1myqi"]
+[ext_resource type="Texture2D" uid="uid://bg6srycttysm6" path="res://Assets/HighWs/Idle Dean (1)/sprite_Idle_Dean 209.png" id="11_tcso2"]
+[ext_resource type="Texture2D" uid="uid://dcyxfohhgevsr" path="res://Assets/HighWs/image (2)/sprite_Jumperingus0.png" id="12_dxr7j"]
+[ext_resource type="Texture2D" uid="uid://cvrjs0oprulgo" path="res://Assets/HighWs/image (2)/sprite_Jumperingus1.png" id="13_egym8"]
+[ext_resource type="Texture2D" uid="uid://c8y5bq8v4wf4h" path="res://Assets/HighWs/image (2)/sprite_Jumperingus2.png" id="14_idysr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3877b"]
 atlas = ExtResource("2_083xm")
@@ -39,6 +52,55 @@ region = Rect2(190, 380, 190, 190)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_dxr7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_egym8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_idysr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7edby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wjagi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fqpe0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wnqi4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_85apb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_1myqi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_tcso2")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_dxr7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_egym8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_idysr")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_3877b")
 }, {
 "duration": 1.0,
@@ -67,30 +129,43 @@ animations = [{
 "speed": 7.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qirgi"]
-height = 54.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_dxr7j"]
+radius = 41.19466
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=2130938374]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qirgi"]
+height = 44.0
+
+[node name="Player" type="CharacterBody2D" unique_id=2130938374]
 collision_layer = 14
 collision_mask = 15
 script = ExtResource("1_083xm")
 speed = 200.0
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=894269219]
+position = Vector2(53, 137)
+zoom = Vector2(3, 3)
+
 [node name="PlayerSprite2D" type="AnimatedSprite2D" parent="." unique_id=1212303399]
-position = Vector2(45.000004, 152.96428)
-scale = Vector2(0.37631583, 0.4206767)
+position = Vector2(37.93684, 161.91826)
+scale = Vector2(0.30274126, 0.3324666)
 sprite_frames = SubResource("SpriteFrames_yu44v")
 animation = &"Walk"
-frame_progress = 0.6781635
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=1227826996]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=223027593]
+position = Vector2(35, 161)
+shape = SubResource("CircleShape2D_dxr7j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1975178190]
 light_mask = 6
 visibility_layer = 6
 texture_filter = 4
 texture_repeat = 1
-position = Vector2(45, 154)
+position = Vector2(34, 162)
 shape = SubResource("CapsuleShape2D_qirgi")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=894269219]
-position = Vector2(53, 137)
-zoom = Vector2(3, 3)
+[connection signal="tree_entered" from="InteractionArea" to="." method="_on_interaction_area_tree_entered"]
+[connection signal="tree_exited" from="InteractionArea" to="." method="_on_interaction_area_tree_exited"]

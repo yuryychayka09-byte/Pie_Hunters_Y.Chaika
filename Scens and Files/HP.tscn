@@ -11,3 +11,10 @@ offset_right = 197.0
 offset_bottom = 95.0
 theme_override_font_sizes/font_size = 22
 script = ExtResource("1_h0dse")
+
+[node name="DialogueLabel" type="Label" parent="." unique_id=927814829]
+offset_left = 568.0
+offset_top = 581.0
+offset_right = 840.0
+offset_bottom = 612.0
+theme_override_font_sizes/font_size = 22
