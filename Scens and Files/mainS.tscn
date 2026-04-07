@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://b3xn8ryfxwdq5"]
+
+[ext_resource type="Script" uid="uid://b0fpla1g00ygy" path="res://Scens and Files/main_s.gd" id="1_5g72m"]
+[ext_resource type="PackedScene" uid="uid://ykelmnknjcjr" path="res://Skripts/character_body_2d dean.tscn" id="1_tqtu5"]
+[ext_resource type="PackedScene" uid="uid://c1f0d0db3c6vh" path="res://Scens and Files/HP.tscn" id="2_5g72m"]
+[ext_resource type="PackedScene" uid="uid://yot2mljx4wx6" path="res://Scens and Files/canvas_layer.tscn" id="3_hcgl0"]
+[ext_resource type="PackedScene" uid="uid://cotfq7yngxge4" path="res://Scens and Files/UIG.tscn" id="4_vaaiq"]
+[ext_resource type="PackedScene" uid="uid://bc3vc7rrf5eax" path="res://Skripts/node_2d.tscn" id="5_u7x7i"]
+[ext_resource type="PackedScene" uid="uid://i8f3v0lrk0ga" path="res://Scens and Files/root_End.tscn" id="6_i1dan"]
+
+[node name="Main" type="Node2D" unique_id=1036158482]
+script = ExtResource("1_5g72m")
+
+[node name="HEALCH" parent="." unique_id=12747681 instance=ExtResource("2_5g72m")]
+
+[node name="PAUSE" parent="." unique_id=750310962 instance=ExtResource("3_hcgl0")]
+
+[node name="TIMER" parent="." unique_id=1967165046 instance=ExtResource("4_vaaiq")]
+
+[node name="Player" parent="." unique_id=2130938374 instance=ExtResource("1_tqtu5")]
+
+[node name="Node2D2" type="Node2D" parent="." unique_id=917983662]
+
+[node name="Node2D" parent="Node2D2" unique_id=996856268 instance=ExtResource("5_u7x7i")]
+
+[node name="Root" parent="Node2D2" unique_id=1028054205 instance=ExtResource("6_i1dan")]

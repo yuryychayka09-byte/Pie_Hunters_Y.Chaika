@@ -4,17 +4,18 @@
 
 [node name="HEALCH" type="CanvasLayer" unique_id=12747681]
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=869565042]
-offset_left = 5.0
-offset_top = 53.0
-offset_right = 197.0
-offset_bottom = 95.0
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=731256679]
+offset_left = 8.0
+offset_top = 65.0
+offset_right = 200.0
+offset_bottom = 107.0
 theme_override_font_sizes/font_size = 22
+value = 100.0
 script = ExtResource("1_h0dse")
 
-[node name="DialogueLabel" type="Label" parent="." unique_id=927814829]
+[node name="DialogueLabel" type="Label" parent="." unique_id=212460359]
 offset_left = 568.0
 offset_top = 581.0
 offset_right = 840.0
 offset_bottom = 612.0
-theme_override_font_sizes/font_size = 22
+theme_override_font_sizes/font_size = 30

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b02iqah6dnhtx"]
 
-[ext_resource type="Script" uid="uid://6f7si5expabq" path="res://portal_c.gd" id="1_ok0mk"]
+[ext_resource type="Script" uid="uid://6f7si5expabq" path="res://Skripts/portal_c.gd" id="1_ok0mk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dwd5j"]
 radius = 41.0
@@ -11,3 +11,6 @@ script = ExtResource("1_ok0mk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=598817603]
 shape = SubResource("CapsuleShape2D_dwd5j")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

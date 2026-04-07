@@ -1,12 +1,20 @@
 [gd_scene format=3 uid="uid://cotfq7yngxge4"]
 
-[ext_resource type="Script" uid="uid://bomosqvmf633v" path="res://Scens and Files/label .gd" id="1_1y2lt"]
+[sub_resource type="GDScript" id="GDScript_ta1vb"]
+script/source = "extends Label
+
+func _process(_delta):
+	text = GameTimer.get_time_string()
+"
 
 [node name="TIMER" type="CanvasLayer" unique_id=1967165046]
 
 [node name="Timer game" type="Label" parent="." unique_id=1403102042]
-offset_right = 137.0
-offset_bottom = 43.0
-theme_override_font_sizes/font_size = 27
+offset_left = -9.0
+offset_top = 7.0
+offset_right = 233.23256
+offset_bottom = 63.0
+theme_override_font_sizes/font_size = 29
 text = "Час гри: 00:00"
-script = ExtResource("1_1y2lt")
+horizontal_alignment = 1
+script = SubResource("GDScript_ta1vb")

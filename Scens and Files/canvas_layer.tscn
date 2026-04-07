@@ -1,7 +1,13 @@
 [gd_scene format=3 uid="uid://yot2mljx4wx6"]
 
 [ext_resource type="Script" uid="uid://car4wxrvsw0r4" path="res://Scens and Files/canvas_layer.gd" id="1_v2lfg"]
-[ext_resource type="Script" uid="uid://bomosqvmf633v" path="res://Scens and Files/label .gd" id="2_n2it6"]
+
+[sub_resource type="GDScript" id="GDScript_owo0y"]
+script/source = "extends Label
+
+func _process(_delta):
+	text = GameTimer.get_time_string()
+"
 
 [node name="PAUSE" type="CanvasLayer" unique_id=750310962]
 process_mode = 3
@@ -50,14 +56,15 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "Resume to game"
 
-[node name="Label" type="Label" parent="." unique_id=1759043639]
-offset_left = 459.0
-offset_top = 31.0
-offset_right = 624.0
-offset_bottom = 65.0
-theme_override_font_sizes/font_size = 22
+[node name="Timer game" type="Label" parent="." unique_id=153251267]
+offset_left = 446.0
+offset_top = 7.0
+offset_right = 661.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 27
 text = "Час гри: 00:00"
-script = ExtResource("2_n2it6")
+horizontal_alignment = 1
+script = SubResource("GDScript_owo0y")
 
 [connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/Main Manu" to="." method="_on_main_manu_pressed"]
 [connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/Quit to desctop" to="." method="_on_quit_to_desctop_pressed"]

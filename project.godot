@@ -14,6 +14,11 @@ config/name="Pie_Hunters"
 run/main_scene="uid://c3w6a2u6tejmv"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
+[autoload]
+
+GameState="*uid://c3i7nltqbmr7l"
+GameTimer="*uid://cs1i8yblahgoc"
+
 [display]
 
 window/size/initial_position_type=3
