@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://bnr3et1y4ae4d"]
 
-[ext_resource type="Script" uid="uid://bnsskseoeyw34" path="res://game_over_menu.gd" id="1_sa8p3"]
+[ext_resource type="Script" uid="uid://bnsskseoeyw34" path="res://Scens and Files/game_over_menu.gd" id="1_sa8p3"]
 [ext_resource type="Texture2D" uid="uid://dmtblntqmicmp" path="res://Assets/HighWs/GameOver.png" id="2_u76t4"]
 
 [sub_resource type="SystemFont" id="SystemFont_7s3uf"]
 
 [node name="GameOverMenu" type="Control" unique_id=2035455908]
 layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = 127.0
@@ -17,16 +18,16 @@ script = ExtResource("1_sa8p3")
 
 [node name="GameOverImage" type="TextureRect" parent="." unique_id=587025163]
 layout_mode = 0
-offset_right = 2007.0
+offset_right = 2324.0
 offset_bottom = 1301.0
 texture = ExtResource("2_u76t4")
 
 [node name="Re t" type="Label" parent="." unique_id=496294399]
 layout_mode = 0
-offset_left = 1051.0
-offset_top = 1141.0
-offset_right = 1324.0
-offset_bottom = 1246.0
+offset_left = 1741.0
+offset_top = 984.0
+offset_right = 2014.0
+offset_bottom = 1089.0
 theme_override_fonts/font = SubResource("SystemFont_7s3uf")
 theme_override_font_sizes/font_size = 37
 text = "
@@ -35,10 +36,10 @@ uppercase = true
 
 [node name="Exit t" type="Label" parent="." unique_id=575475139]
 layout_mode = 0
-offset_left = 493.0
-offset_top = 1155.0
-offset_right = 942.0
-offset_bottom = 1248.0
+offset_left = 89.0
+offset_top = 1004.0
+offset_right = 538.0
+offset_bottom = 1097.0
 theme_override_font_sizes/font_size = 32
 text = "
 І це все на що ти здатен?"
@@ -46,20 +47,20 @@ uppercase = true
 
 [node name="Exit to Main Menu" type="Button" parent="." unique_id=832435712]
 layout_mode = 0
-offset_left = 508.0
-offset_top = 1063.0
-offset_right = 936.0
-offset_bottom = 1163.0
+offset_left = 97.0
+offset_top = 900.0
+offset_right = 525.0
+offset_bottom = 1000.0
 theme_override_font_sizes/font_size = 48
 text = "Exit to Main Menu
 "
 
 [node name="Restart" type="Button" parent="." unique_id=945239482]
 layout_mode = 0
-offset_left = 1010.0
-offset_top = 1064.0
-offset_right = 1341.5
-offset_bottom = 1166.0
+offset_left = 1716.0
+offset_top = 897.0
+offset_right = 2047.5
+offset_bottom = 999.0
 theme_override_font_sizes/font_size = 51
 text = "Restart"
 

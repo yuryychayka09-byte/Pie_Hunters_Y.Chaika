@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c1f0d0db3c6vh"]
 
 [ext_resource type="Script" uid="uid://nvnoivx4u8b2" path="res://Scens and Files/progress_bar.gd" id="1_h0dse"]
+[ext_resource type="Script" uid="uid://c85h1mjgbubya" path="res://Scens and Files/money_label.gd" id="2_3dt24"]
 
 [node name="HEALCH" type="CanvasLayer" unique_id=12747681]
 
@@ -19,3 +20,12 @@ offset_top = 581.0
 offset_right = 840.0
 offset_bottom = 612.0
 theme_override_font_sizes/font_size = 30
+
+[node name="MoneyLabel" type="Label" parent="." unique_id=1059361949]
+offset_left = 238.0
+offset_top = 8.0
+offset_right = 410.0
+offset_bottom = 51.0
+theme_override_font_sizes/font_size = 26
+text = "Гроші: 0"
+script = ExtResource("2_3dt24")

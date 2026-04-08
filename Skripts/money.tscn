@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bk4100857qev"]
+
+[ext_resource type="Script" uid="uid://od811umbnbph" path="res://Scens and Files/money.gd" id="1_a8yb7"]
+[ext_resource type="Texture2D" uid="uid://b5gn1fi0ejj6x" path="res://Assets/HighWs/image-removebg-preview (3).png" id="2_qs6pi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fbwp4"]
+size = Vector2(15, 9.5)
+
+[node name="Money" type="Area2D" unique_id=2023292316]
+script = ExtResource("1_a8yb7")
+value = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1572835576]
+position = Vector2(12, 2.75)
+shape = SubResource("RectangleShape2D_fbwp4")
+
+[node name="Dolars" type="Sprite2D" parent="CollisionShape2D" unique_id=1192384959]
+position = Vector2(1, -1.0624838)
+scale = Vector2(0.040581163, 0.04083173)
+texture = ExtResource("2_qs6pi")

@@ -16,15 +16,21 @@ var impala_phrase_index: int = 0
 var is_dead: bool = false
 
 func _ready() -> void:
+	# якщо при рестарті залишилось 0 HP → відновлюємо
+	if GameState.current_hp <= 0:
+		GameState.current_hp = GameState.max_hp
+
 	if hp_bar:
 		hp_bar.update_hp(GameState.current_hp, GameState.max_hp)
 		GameState.connect("hp_changed", Callable(hp_bar, "update_hp"))
 	print("HP при старті Player:", GameState.current_hp)
 
+
 func _physics_process(delta: float) -> void:
 	if is_dead:
 		return   # якщо персонаж мертвий — не рухається
 
+	# --- рух і стрибки ---
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		if not falling:
@@ -56,6 +62,11 @@ func _physics_process(delta: float) -> void:
 
 	if near_impala and Input.is_action_just_pressed("F"):
 		_on_impala_interacted()
+
+	# --- ближня атака на I ---
+	if Input.is_action_just_pressed("attack"):
+		attack()
+
 
 func _on_impala_interacted():
 	if dialogue_label:
@@ -96,3 +107,14 @@ func die() -> void:
 	set_physics_process(false)
 	print("Персонаж помер")
 	get_tree().change_scene_to_file("res://Scens and Files/game_over_menu.tscn")
+
+# --- ближня атака ---
+func attack():
+	var bodies = $AttackZone.get_overlapping_bodies()
+	print("AttackZone bodies:", bodies) # покаже список об’єктів у зоні
+	for body in bodies:
+		if body.is_in_group("Enemy"):
+			print("Ворог знайдений:", body)
+			if body.has_method("take_damage"):
+				print("Наносимо урон ворогу")
+				body.take_damage(20)
