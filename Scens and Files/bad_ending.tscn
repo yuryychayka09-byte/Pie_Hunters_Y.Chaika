@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://bfgaddxfek0nd"]
+
+[ext_resource type="Texture2D" uid="uid://b5gn1fi0ejj6x" path="res://Assets/HighWs/image-removebg-preview (3).png" id="1_gf3rg"]
+[ext_resource type="Script" uid="uid://b6fvlr2na0ehn" path="res://Scens and Files/exit_to_main_menu.gd" id="1_v84gq"]
+[ext_resource type="Texture2D" uid="uid://dmtblntqmicmp" path="res://Assets/HighWs/GameOver.png" id="2_v84gq"]
+[ext_resource type="Texture2D" uid="uid://dssprncst6f34" path="res://Assets/HighWs/Impala 67 .png" id="3_drnq0"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1953413883]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=810771910]
+offset_right = 2342.235
+offset_bottom = 1327.0
+color = Color(0.15, 0.094500005, 0.094500005, 1)
+
+[node name="Exit to Main Menu" type="Button" parent="." unique_id=1640045748]
+offset_left = 1597.0
+offset_top = 1180.0
+offset_right = 2253.0
+offset_bottom = 1290.0
+theme_override_colors/font_outline_color = Color(0.68235296, 0, 0, 1)
+theme_override_font_sizes/font_size = 74
+text = "Exit to Main Menu
+"
+script = ExtResource("1_v84gq")
+
+[node name="Label" type="Label" parent="." unique_id=1677038543]
+offset_left = 1220.0
+offset_top = 21.0
+offset_right = 2189.0
+offset_bottom = 112.0
+theme_override_colors/font_color = Color(2.117753e-06, 0.51816875, 0.47584862, 1)
+theme_override_font_sizes/font_size = 66
+text = "Щож, сьогодні не твій день..."
+
+[node name="It\'s Just 2" type="Sprite2D" parent="." unique_id=1741007626]
+position = Vector2(2123.0002, 885)
+rotation = -0.61062276
+scale = Vector2(0.6433491, 0.6433491)
+texture = ExtResource("1_gf3rg")
+
+[node name="GameOver" type="Sprite2D" parent="." unique_id=342533107]
+position = Vector2(260.00003, 130)
+rotation = -0.27839562
+scale = Vector2(0.39687982, 0.114929765)
+texture = ExtResource("2_v84gq")
+
+[node name="Impala67" type="Sprite2D" parent="." unique_id=18429837]
+position = Vector2(447, 1192)
+scale = Vector2(1.2900001, 1.2900003)
+texture = ExtResource("3_drnq0")
+
+[node name="Label2" type="Label" parent="." unique_id=1712080808]
+offset_left = 41.0
+offset_top = 403.0
+offset_right = 1771.1627
+offset_bottom = 619.0
+theme_override_colors/font_color = Color(2.117753e-06, 0.51816875, 0.47584862, 1)
+theme_override_font_sizes/font_size = 51
+text = "Мабуть це той самий день коли бог забрав у тебе удачу
+ головного героя, абож ти просто не намагався 
+перемогти..."
+
+[node name="Label" type="Label" parent="Label2" unique_id=903672634]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 420.0
+offset_right = 1678.0
+offset_bottom = 543.0
+theme_override_colors/font_color = Color(2.117753e-06, 0.51816875, 0.47584862, 1)
+theme_override_font_sizes/font_size = 59
+text = "Побачимось коли будеш мати гроші при собі"
+
+[node name="Label3" type="Label" parent="." unique_id=1130993739]
+offset_left = 1534.0
+offset_top = 120.0
+offset_right = 2164.0
+offset_bottom = 189.0
+theme_override_colors/font_color = Color(2.117753e-06, 0.51816875, 0.47584862, 1)
+theme_override_font_sizes/font_size = 50
+text = "Ти не отримаєш пирога! "

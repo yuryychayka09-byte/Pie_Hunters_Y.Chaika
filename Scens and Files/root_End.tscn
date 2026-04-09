@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://yot2mljx4wx6" path="res://Scens and Files/canvas_layer.tscn" id="11_28w0o"]
 [ext_resource type="PackedScene" uid="uid://c1f0d0db3c6vh" path="res://Scens and Files/HP.tscn" id="12_1d2hu"]
 [ext_resource type="PackedScene" uid="uid://cotfq7yngxge4" path="res://Scens and Files/UIG.tscn" id="13_7wg4y"]
+[ext_resource type="PackedScene" uid="uid://dypap57g0cfs" path="res://Seller.tscn" id="15_1mj80"]
+[ext_resource type="PackedScene" uid="uid://dbsriys61qf4g" path="res://Enemies/demons.tscn" id="16_f3407"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fd755"]
 texture = ExtResource("5_28w0o")
@@ -3786,3 +3788,13 @@ shape = SubResource("RectangleShape2D_1d2hu")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=27345885]
 position = Vector2(2092.5, 92.5)
 shape = SubResource("RectangleShape2D_7wg4y")
+
+[node name="CharacterBody2D" parent="." unique_id=787588398 instance=ExtResource("15_1mj80")]
+position = Vector2(1785, 75)
+collision_layer = 14
+collision_mask = 15
+
+[node name="Demons" parent="." unique_id=674337161 instance=ExtResource("16_f3407")]
+position = Vector2(489, 97)
+collision_layer = 264
+collision_mask = 3

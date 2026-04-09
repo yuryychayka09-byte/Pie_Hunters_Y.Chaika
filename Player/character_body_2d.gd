@@ -8,6 +8,7 @@ extends CharacterBody2D
 @onready var sprite: AnimatedSprite2D = $PlayerSprite2D
 @onready var dialogue_label = get_node_or_null("/root/Node2D/CanvasLayer3/DialogueLabel")
 @onready var hp_bar = get_node_or_null("/root/Node2D/CanvasLayer3/ProgressBar")
+@onready var attack_zone: Area2D = $AttackZone
 
 var fall_start_y: float = 0.0
 var falling: bool = false
@@ -15,6 +16,7 @@ var near_impala: bool = false
 var impala_phrase_index: int = 0
 var is_dead: bool = false
 var is_hurt: bool = false
+var is_attacking: bool = false
 
 func _ready() -> void:
 	if GameState.current_hp <= 0:
@@ -24,6 +26,7 @@ func _ready() -> void:
 		hp_bar.update_hp(GameState.current_hp, GameState.max_hp)
 		GameState.connect("hp_changed", Callable(hp_bar, "update_hp"))
 
+	# AnimatedSprite2D -> animation_finished без аргументів
 	sprite.connect("animation_finished", Callable(self, "_on_animation_finished"))
 
 	print("HP при старті Player:", GameState.current_hp)
@@ -39,23 +42,23 @@ func _physics_process(delta: float) -> void:
 		if not falling:
 			falling = true
 			fall_start_y = global_position.y
-		if velocity.y < 0 and not is_hurt:
+		if velocity.y < 0 and not is_hurt and not is_attacking:
 			sprite.play("Jump")
 
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = jump_velocity
-		if not is_hurt:
+		if not is_hurt and not is_attacking:
 			sprite.play("Jump")
 
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction != 0:
 		velocity.x = direction * speed
 		sprite.flip_h = direction < 0
-		if is_on_floor() and not is_hurt:
+		if is_on_floor() and not is_hurt and not is_attacking:
 			sprite.play("Walk")
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
-		if is_on_floor() and not is_hurt:
+		if is_on_floor() and not is_hurt and not is_attacking:
 			sprite.play("Idle")
 
 	move_and_slide()
@@ -67,8 +70,41 @@ func _physics_process(delta: float) -> void:
 	if near_impala and Input.is_action_just_pressed("F"):
 		_on_impala_interacted()
 
+	# --- атака на клавішу I (action "attack") ---
 	if Input.is_action_just_pressed("attack"):
-		attack()
+		start_attack()
+
+
+func start_attack():
+	if is_attacking or is_hurt or is_dead:
+		return
+	is_attacking = true
+	sprite.play("Attack")
+	attack()
+
+	# таймер для скидання стану навіть якщо сигнал не спрацює
+	var t = Timer.new()
+	t.wait_time = 0.5   # тривалість анімації Attack у секундах
+	t.one_shot = true
+	add_child(t)
+	t.connect("timeout", Callable(self, "_reset_attack"))
+	t.start()
+
+
+func _reset_attack():
+	is_attacking = false
+	if is_on_floor():
+		sprite.play("Idle")
+	else:
+		sprite.play("Jump")
+
+
+func _on_animation_finished() -> void:
+	# AnimatedSprite2D не передає аргументів, тому перевіряємо sprite.animation
+	if sprite.animation == "Hurt_1":
+		_reset_hurt()
+	elif sprite.animation == "Attack":
+		_reset_attack()
 
 
 func _on_impala_interacted():
@@ -114,9 +150,8 @@ func take_enemy_damage(damage: int) -> void:
 		is_hurt = true
 		sprite.play("Hurt_1")
 
-		# таймер для скидання стану навіть якщо сигнал не спрацює
 		var t = Timer.new()
-		t.wait_time = 0.5   # тривалість Hurt_1 у секундах
+		t.wait_time = 0.5   # тривалість анімації Hurt_1
 		t.one_shot = true
 		add_child(t)
 		t.connect("timeout", Callable(self, "_reset_hurt"))
@@ -132,10 +167,6 @@ func _reset_hurt():
 	else:
 		sprite.play("Jump")
 
-func _on_animation_finished(anim_name: String) -> void:
-	if anim_name == "Hurt_1":
-		_reset_hurt()
-
 func die() -> void:
 	is_dead = true
 	velocity = Vector2.ZERO
@@ -145,11 +176,12 @@ func die() -> void:
 
 # --- ближня атака ---
 func attack():
-	var bodies = $AttackZone.get_overlapping_bodies()
+	var bodies = attack_zone.get_overlapping_bodies()
 	print("AttackZone bodies:", bodies)
+
 	for body in bodies:
 		if body.is_in_group("Enemy"):
 			print("Ворог знайдений:", body)
-			if body.has_method("take_enemy_damage"):
+			if body.has_method("take_damage"):
 				print("Наносимо урон ворогу")
-				body.take_enemy_damage(20)
+				body.take_damage(20)

@@ -2459,5 +2459,15 @@ position = Vector2(3230, 523)
 collision_layer = 264
 collision_mask = 3
 
+[node name="Demons3" parent="." unique_id=1517705208 instance=ExtResource("23_0ku1x")]
+position = Vector2(4215, 539)
+collision_layer = 264
+collision_mask = 3
+
+[node name="Demons4" parent="." unique_id=1679220869 instance=ExtResource("23_0ku1x")]
+position = Vector2(2725, 507)
+collision_layer = 264
+collision_mask = 3
+
 [connection signal="body_entered" from="Portal_F" to="Portal_F" method="_on_body_entered"]
 [connection signal="body_exited" from="Portal_F" to="Portal_F" method="_on_body_exited"]

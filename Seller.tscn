@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://dypap57g0cfs"]
+
+[ext_resource type="Script" uid="uid://cobf1anwwwxtr" path="res://Seller.gd" id="1_2qyxt"]
+[ext_resource type="Texture2D" uid="uid://bx1gfku8j56oc" path="res://Assets/HighWs/Idle.png" id="2_x3qsp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2qyxt"]
+size = Vector2(97, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64si2"]
+atlas = ExtResource("2_x3qsp")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5k0sk"]
+atlas = ExtResource("2_x3qsp")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efn4r"]
+atlas = ExtResource("2_x3qsp")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ptbo"]
+atlas = ExtResource("2_x3qsp")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_km71l"]
+atlas = ExtResource("2_x3qsp")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2eqqm"]
+atlas = ExtResource("2_x3qsp")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gc6rp"]
+atlas = ExtResource("2_x3qsp")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pnxwt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64si2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5k0sk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efn4r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ptbo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_km71l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2eqqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gc6rp")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="PieSeller" type="Area2D" unique_id=787588398]
+script = ExtResource("1_2qyxt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=416624687]
+position = Vector2(-21.5, 28.5)
+shape = SubResource("RectangleShape2D_2qyxt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=464498735]
+position = Vector2(-20, 12)
+scale = Vector2(0.6201172, 0.6201172)
+sprite_frames = SubResource("SpriteFrames_pnxwt")
+animation = &"Idle"
+frame_progress = 0.13167591

@@ -3,15 +3,21 @@
 [ext_resource type="Script" uid="uid://c80nucx4wl0i5" path="res://Player/character_body_2d.gd" id="1_083xm"]
 [ext_resource type="Texture2D" uid="uid://b14tn4u7k880a" path="res://Assets/HighWs/Walk sprites.png" id="2_083xm"]
 [ext_resource type="Texture2D" uid="uid://xitrbqktu30h" path="res://Assets/HighWs/Idle Dean (1)/sprite_Idle_Dean 200.png" id="2_dxr7j"]
+[ext_resource type="Texture2D" uid="uid://c0y1xr28cnsro" path="res://Assets/HighWs/Attack/sprite_Attack0.png" id="2_nlnc3"]
 [ext_resource type="Texture2D" uid="uid://naamrdpsgkgg" path="res://Assets/HighWs/Знімок екрана 2026-04-09 083354/sprite_HD0.png" id="2_wjagi"]
 [ext_resource type="Texture2D" uid="uid://d1xn5ygbs1kkg" path="res://Assets/HighWs/Idle Dean (1)/sprite_Idle_Dean 201.png" id="3_egym8"]
 [ext_resource type="Texture2D" uid="uid://c86gvkn8atnm1" path="res://Assets/HighWs/Знімок екрана 2026-04-09 083354/sprite_1.png" id="3_fqpe0"]
+[ext_resource type="Texture2D" uid="uid://cmbylyds4nii5" path="res://Assets/HighWs/Attack/sprite_Attack1.png" id="3_rpi3w"]
 [ext_resource type="Texture2D" uid="uid://cbndfqps54ym3" path="res://Assets/HighWs/Idle Dean (1)/sprite_Idle_Dean 202.png" id="4_idysr"]
+[ext_resource type="Texture2D" uid="uid://xntwcjep3vhd" path="res://Assets/HighWs/Attack/sprite_Attack2.png" id="4_ql74v"]
 [ext_resource type="Texture2D" uid="uid://du2kiiqmqu66j" path="res://Assets/HighWs/Знімок екрана 2026-04-09 083354/sprite_2.png" id="4_wnqi4"]
 [ext_resource type="Texture2D" uid="uid://b2tl631oe1ise" path="res://Assets/HighWs/Idle Dean (1)/sprite_Idle_Dean 203.png" id="5_7edby"]
 [ext_resource type="Texture2D" uid="uid://cjbwx08i3wpri" path="res://Assets/HighWs/Знімок екрана 2026-04-09 083354/sprite_3.png" id="5_85apb"]
+[ext_resource type="Texture2D" uid="uid://b12ttxfraygeh" path="res://Assets/HighWs/Attack/sprite_Attack3.png" id="5_fp7mm"]
+[ext_resource type="Texture2D" uid="uid://oeayo5qbis3j" path="res://Assets/HighWs/Attack/sprite_Attack4.png" id="6_dpse3"]
 [ext_resource type="Texture2D" uid="uid://c8mi76a614ncs" path="res://Assets/HighWs/Idle Dean (1)/sprite_Idle_Dean 204.png" id="6_wjagi"]
 [ext_resource type="Texture2D" uid="uid://bebtxwhyuy6yq" path="res://Assets/HighWs/Idle Dean (1)/sprite_Idle_Dean 205.png" id="7_fqpe0"]
+[ext_resource type="Texture2D" uid="uid://b45qo7y5o71dp" path="res://Assets/HighWs/Attack/sprite_Attack5.png" id="7_msr3m"]
 [ext_resource type="Texture2D" uid="uid://c0lvcrjeeqyfi" path="res://Assets/HighWs/Idle Dean (1)/sprite_Idle_Dean 206.png" id="8_wnqi4"]
 [ext_resource type="Texture2D" uid="uid://b6n7g2gjwue3r" path="res://Assets/HighWs/Idle Dean (1)/sprite_Idle_Dean 207.png" id="9_85apb"]
 [ext_resource type="Texture2D" uid="uid://dxsxkayj16ijw" path="res://Assets/HighWs/Idle Dean (1)/sprite_Idle_Dean 208.png" id="10_1myqi"]
@@ -55,6 +61,29 @@ region = Rect2(190, 380, 190, 190)
 [sub_resource type="SpriteFrames" id="SpriteFrames_yu44v"]
 resource_local_to_scene = true
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_nlnc3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rpi3w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ql74v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fp7mm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dpse3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_msr3m")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 12.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_wjagi")
@@ -175,9 +204,9 @@ zoom = Vector2(3.3, 3.3)
 position = Vector2(37.93684, 161.91826)
 scale = Vector2(0.30274126, 0.3324666)
 sprite_frames = SubResource("SpriteFrames_yu44v")
-animation = &"Hurt_1"
-frame = 3
-frame_progress = 1.0
+animation = &"Attack"
+frame = 1
+frame_progress = 0.4649438
 
 [node name="InteractionArea" type="Area2D" parent="." unique_id=1227826996]
 collision_layer = 0

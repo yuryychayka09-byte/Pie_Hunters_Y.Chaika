@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://cqv41m34rkuua"]
+
+[ext_resource type="Texture2D" uid="uid://uabjajtuy0j0" path="res://Assets/HighWs/Logotip game.png" id="1_4nhbb"]
+[ext_resource type="Script" uid="uid://b6fvlr2na0ehn" path="res://Scens and Files/exit_to_main_menu.gd" id="1_b10bb"]
+[ext_resource type="Texture2D" uid="uid://c63e320ytcga1" path="res://Assets/HighWs/It's Just 1.jpg" id="2_p4txm"]
+
+[sub_resource type="SystemFont" id="SystemFont_y4qkq"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1049381040]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1362421066]
+offset_right = 2315.0
+offset_bottom = 1288.0
+color = Color(0.103743516, 0.10374353, 0.103743516, 1)
+
+[node name="Exit to Main Menu" type="Button" parent="ColorRect" unique_id=1254748818]
+layout_mode = 0
+offset_left = 1443.0
+offset_top = 47.0
+offset_right = 2037.0
+offset_bottom = 147.0
+theme_override_colors/font_outline_color = Color(0.68235296, 0, 0, 1)
+theme_override_font_sizes/font_size = 67
+text = "Exit to Main Menu
+"
+script = ExtResource("1_b10bb")
+
+[node name="It\'s Just Foto 1" type="Sprite2D" parent="ColorRect" unique_id=9931457]
+position = Vector2(1737, 595.00006)
+scale = Vector2(1.3742088, 1.3742092)
+texture = ExtResource("2_p4txm")
+
+[node name="Label" type="Label" parent="." unique_id=1882291762]
+offset_left = 198.0
+offset_top = 50.0
+offset_right = 975.0
+offset_bottom = 221.0
+theme_override_colors/font_color = Color(0.8223856, 0.4888826, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_y4qkq")
+theme_override_font_sizes/font_size = 61
+text = "Вітаю тебе мисливцю ти 
+дістав те чого бажаєш!"
+
+[node name="Label" type="Label" parent="Label" unique_id=56118299]
+layout_mode = 0
+offset_left = -108.0
+offset_top = 1028.0
+offset_right = 1308.0
+offset_bottom = 1120.0
+theme_override_colors/font_color = Color(0.8223856, 0.4888826, 0, 1)
+theme_override_font_sizes/font_size = 67
+text = "Скуштуй пирога і відпочинь ти заслужив!"
+
+[node name="LogotipGame" type="Sprite2D" parent="." unique_id=304848617]
+position = Vector2(585, 566)
+scale = Vector2(0.77481204, 0.774812)
+texture = ExtResource("1_4nhbb")
