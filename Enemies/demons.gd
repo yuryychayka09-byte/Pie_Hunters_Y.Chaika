@@ -15,6 +15,8 @@ var player: Node2D = null
 @onready var zone_attack: Area2D = $ZoneAttack
 @onready var zone_vision: Area2D = $ZoneVision
 
+var hp: int = 50
+
 func _ready():
 	start_position = global_position
 	anim.connect("animation_finished", Callable(self, "_on_animation_finished"))
@@ -34,7 +36,6 @@ func _physics_process(delta):
 	move_and_slide()
 
 func patrol():
-	# якщо ворог дійшов до межі патруля → розвертається і трохи стоїть
 	if abs(global_position.x - start_position.x) > patrol_distance:
 		direction *= -1
 		velocity.x = 0
@@ -42,7 +43,6 @@ func patrol():
 	else:
 		velocity.x = direction * speed
 		anim.play("Walk")
-
 
 func chase():
 	if player:
@@ -64,9 +64,9 @@ func _on_animation_finished():
 	match state:
 		"attack":
 			if player and zone_attack.overlaps_body(player):
-				if player.has_method("take_damage"):
-					player.take_damage(attack_damage) # наносимо урон гравцю
-				attack() # повторна атака, якщо гравець досі в зоні
+				if player.has_method("take_enemy_damage"):
+					player.take_enemy_damage(attack_damage) # наносимо урон гравцю з анімацією
+				attack()
 			else:
 				state = "chase"
 		"jump":
@@ -92,17 +92,13 @@ func _on_zone_attack_body_entered(body: Node2D) -> void:
 func _on_zone_attack_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		state = "chase"
+
 func die():
-	# створюємо монету при смерті
 	var coin_scene = preload("res://Skripts/money.tscn")
 	var coin = coin_scene.instantiate()
 	coin.global_position = global_position
 	get_parent().add_child(coin)
-
 	queue_free()
-
-
-var hp: int = 50
 
 func take_damage(amount: int):
 	hp -= amount

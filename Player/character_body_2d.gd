@@ -14,21 +14,24 @@ var falling: bool = false
 var near_impala: bool = false
 var impala_phrase_index: int = 0
 var is_dead: bool = false
+var is_hurt: bool = false
 
 func _ready() -> void:
-	# якщо при рестарті залишилось 0 HP → відновлюємо
 	if GameState.current_hp <= 0:
 		GameState.current_hp = GameState.max_hp
 
 	if hp_bar:
 		hp_bar.update_hp(GameState.current_hp, GameState.max_hp)
 		GameState.connect("hp_changed", Callable(hp_bar, "update_hp"))
+
+	sprite.connect("animation_finished", Callable(self, "_on_animation_finished"))
+
 	print("HP при старті Player:", GameState.current_hp)
 
 
 func _physics_process(delta: float) -> void:
 	if is_dead:
-		return   # якщо персонаж мертвий — не рухається
+		return
 
 	# --- рух і стрибки ---
 	if not is_on_floor():
@@ -36,22 +39,23 @@ func _physics_process(delta: float) -> void:
 		if not falling:
 			falling = true
 			fall_start_y = global_position.y
-		if velocity.y < 0:
+		if velocity.y < 0 and not is_hurt:
 			sprite.play("Jump")
 
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = jump_velocity
-		sprite.play("Jump")
+		if not is_hurt:
+			sprite.play("Jump")
 
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction != 0:
 		velocity.x = direction * speed
 		sprite.flip_h = direction < 0
-		if is_on_floor():
+		if is_on_floor() and not is_hurt:
 			sprite.play("Walk")
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
-		if is_on_floor():
+		if is_on_floor() and not is_hurt:
 			sprite.play("Idle")
 
 	move_and_slide()
@@ -63,7 +67,6 @@ func _physics_process(delta: float) -> void:
 	if near_impala and Input.is_action_just_pressed("F"):
 		_on_impala_interacted()
 
-	# --- ближня атака на I ---
 	if Input.is_action_just_pressed("attack"):
 		attack()
 
@@ -94,12 +97,44 @@ func check_fall_damage() -> void:
 		var damage = int((fall_distance - fall_height_threshold) * fall_damage_multiplier)
 		take_damage(damage)    
 
+# --- загальний урон (падіння) ---
 func take_damage(damage: int) -> void:
 	GameState.damage(damage)
 	print("HP після урону:", GameState.current_hp)
 
 	if GameState.current_hp <= 0 and not is_dead:
 		die()
+
+# --- урон від ворогів з анімацією ---
+func take_enemy_damage(damage: int) -> void:
+	GameState.damage(damage)
+	print("HP після урону від ворога:", GameState.current_hp)
+
+	if sprite:
+		is_hurt = true
+		sprite.play("Hurt_1")
+
+		# таймер для скидання стану навіть якщо сигнал не спрацює
+		var t = Timer.new()
+		t.wait_time = 0.5   # тривалість Hurt_1 у секундах
+		t.one_shot = true
+		add_child(t)
+		t.connect("timeout", Callable(self, "_reset_hurt"))
+		t.start()
+
+	if GameState.current_hp <= 0 and not is_dead:
+		die()
+
+func _reset_hurt():
+	is_hurt = false
+	if is_on_floor():
+		sprite.play("Idle")
+	else:
+		sprite.play("Jump")
+
+func _on_animation_finished(anim_name: String) -> void:
+	if anim_name == "Hurt_1":
+		_reset_hurt()
 
 func die() -> void:
 	is_dead = true
@@ -111,10 +146,10 @@ func die() -> void:
 # --- ближня атака ---
 func attack():
 	var bodies = $AttackZone.get_overlapping_bodies()
-	print("AttackZone bodies:", bodies) # покаже список об’єктів у зоні
+	print("AttackZone bodies:", bodies)
 	for body in bodies:
 		if body.is_in_group("Enemy"):
 			print("Ворог знайдений:", body)
-			if body.has_method("take_damage"):
+			if body.has_method("take_enemy_damage"):
 				print("Наносимо урон ворогу")
-				body.take_damage(20)
+				body.take_enemy_damage(20)
